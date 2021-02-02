@@ -68,8 +68,8 @@
         "package": "GraphiQLVapor",
         "repositoryURL": "https://github.com/alexsteinerde/graphiql-vapor.git",
         "state": {
-          "branch": "vapor4",
-          "revision": "9dd25fb800c83b8bf7765050b94a617917c897b8",
+          "branch": "master",
+          "revision": "01c3b38e5c7722c129e95583c030dcee4859518a",
           "version": null
         }
       },
@@ -93,10 +93,10 @@
       },
       {
         "package": "GraphQLKit",
-        "repositoryURL": "https://github.com/MaxDesiatov/graphql-kit.git",
+        "repositoryURL": "https://github.com/alexsteinerde/graphql-kit.git",
         "state": {
-          "branch": "patch-1",
-          "revision": "bdd200114e966e1f228b6263899d0cbbd459fc2f",
+          "branch": "vapor4",
+          "revision": "3c012d9e9598a5b17ec0d6f1e6ac3ece2e4b587d",
           "version": null
         }
       },
