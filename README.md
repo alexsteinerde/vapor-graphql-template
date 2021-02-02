@@ -1,8 +1,8 @@
 # GraphQL Vapor Template
 [![Language](https://img.shields.io/badge/Swift-5.1-brightgreen.svg)](http://swift.org)
-[![Vapor Version](https://img.shields.io/badge/Vapor-3-F6CBCA.svg)](http://vapor.codes)
+[![Vapor Version](https://img.shields.io/badge/Vapor-4-F6CBCA.svg)](http://vapor.codes)
 
-This is a template that can be used to create Vapor applications that include GraphQL APIs. It's based on [GraphQL](https://github.com/alexsteinerde/GraphQL), [Graphiti](https://github.com/alexsteinerde/Graphiti) and helper functions from [GraphQLKit](https://github.com/alexsteinerde/graphql-kit).
+This is a template that can be used to create Vapor applications that include GraphQL APIs. It's based on [GraphQL](https://github.com/GraphQLSwift/GraphQL), [Graphiti](https://github.com/GraphQLSwift/Graphiti) and helper functions from [GraphQLKit](https://github.com/alexsteinerde/graphql-kit).
 
 ## Example Queries:
 ```graphql
@@ -31,12 +31,12 @@ mutation createTodo {
 }
 
 // Or we can also define parameters that are fetched from the JSON formatted parameters field below.
-mutation deleteTodo($id: Int!) {
+mutation deleteTodo($id: UUID!) {
   deleteTodo(id: $id)
 }
 
 // Parameters
 {
-  "id": 1
+  "id": "1b06a7bc-b542-41cf-8b2a-328943a5ce80"
 }
 ```
