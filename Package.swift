@@ -16,8 +16,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
 
         // 🌐 GraphQL
-        .package(url: "https://github.com/alexsteinerde/graphql-kit.git", .branch("vapor4")), // Vapor Utilities
-        .package(url: "https://github.com/alexsteinerde/graphiql-vapor.git", .branch("master")), // Web Query Page
+        .package(url: "https://github.com/alexsteinerde/graphql-kit.git", from: "2.0.0"), // Vapor Utilities
+        .package(url: "https://github.com/alexsteinerde/graphiql-vapor.git", from: "2.0.0"), // Web Query Page
     ],
     targets: [
         .target(name: "App", dependencies: ["Fluent", "FluentSQLiteDriver", "Vapor", "GraphQLKit", "GraphiQLVapor"]),
