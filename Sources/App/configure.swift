@@ -7,7 +7,8 @@ import GraphiQLVapor
 // configures your application
 public func configure(_ app: Application) throws {
     app.databases.use(.sqlite(.memory), as: .sqlite)
-    app.migrations.add(CreateTodo())
+    app.migrations.add(MigrateTodos())
+    app.migrations.add(MigrateUsers())
     try app.autoMigrate().wait()
 
     // Register the schema and its resolver.
