@@ -2,19 +2,46 @@ import Graphiti
 import Vapor
 
 final class TodoResolver {
+    func getAllUsers(request: Request, _: NoArguments) throws -> EventLoopFuture<[User]> {
+        User.query(on: request.db).all()
+    }
+
+    struct CreateUserArguments: Codable {
+        let name: String
+    }
+
+    func createUser(
+        request: Request,
+        arguments: CreateUserArguments
+    ) throws -> EventLoopFuture<User> {
+        let user = User(name: arguments.name)
+        return user.create(on: request.db).map { user }
+    }
+
+    struct DeleteUserArguments: Codable {
+        let id: UUID
+    }
+
+    func deleteUser(request: Request, arguments: DeleteUserArguments) throws -> EventLoopFuture<Bool> {
+        User.find(arguments.id, on: request.db)
+            .unwrap(or: Abort(.notFound))
+            .flatMap({ $0.delete(on: request.db) })
+            .transform(to: true)
+    }
+
     func getAllTodos(request: Request, _: NoArguments) throws -> EventLoopFuture<[Todo]> {
         Todo.query(on: request.db).all()
     }
 
     struct CreateTodoArguments: Codable {
         let title: String
+        let userID: UUID
     }
 
     func createTodo(request: Request, arguments: CreateTodoArguments) throws -> EventLoopFuture<Todo> {
-        let todo = Todo(title: arguments.title)
+        let todo = Todo(title: arguments.title, userID: arguments.userID)
         return todo.create(on: request.db).map { todo }
     }
-
     struct DeleteTodoArguments: Codable {
         let id: UUID
     }

@@ -13,11 +13,16 @@ final class Todo: Model {
     @Field(key: "title")
     var title: String
 
+    /// A user that owns this `Todo` item.
+    @Parent(key: "user_id")
+    var user: User
+
     init() { }
 
     /// Creates a new `Todo`.
-    init(id: UUID? = nil, title: String) {
+    init(id: UUID? = nil, title: String, userID: UUID) {
         self.id = id
         self.title = title
+        self.$user.id = userID
     }
 }
