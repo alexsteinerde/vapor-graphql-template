@@ -34,7 +34,7 @@ query GetAllUsersWithTodos {
 
 // We can include arguments directly into the query
 mutation createUser {
-  createTodo(name: "Jess", userID: "8339179E-39C5-43E0-8D95-37FE6C547970") {
+  createUser(name: "Jess") {
     id
     name
   }
