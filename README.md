@@ -41,20 +41,21 @@ mutation createUser {
 }
 
 # We can pass multiple arguments directly to the query
-mutation createTodo {
-  createTodo(title: "Use GraphQL", userID: "8339179E-39C5-43E0-8D95-37FE6C547970") {
+mutation createTodo($userId: UUID!) {
+  createTodo(title: "Use GraphQL", userID: $userId) {
     id
     title
   }
 }
 
-// Or we can also define parameters that are fetched from the JSON formatted parameters field below.
+# Or we can also define parameters that are fetched from the JSON formatted parameters field below.
 mutation deleteTodo($id: UUID!) {
   deleteTodo(id: $id)
 }
 
 // Parameters
 {
-  "id": "1b06a7bc-b542-41cf-8b2a-328943a5ce80"
+  "id": "1b06a7bc-b542-41cf-8b2a-328943a5ce80",
+  "userId": "AAFEEE1F-5185-4191-B6CC-46D4C7040565"
 }
 ```
