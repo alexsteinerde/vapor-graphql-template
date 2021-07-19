@@ -16,6 +16,9 @@ final class Todo: Model {
     /// A user that owns this `Todo` item.
     @Parent(key: "user_id")
     var user: User
+    
+    @Siblings(through: TodoTag.self, from: \.$todo, to: \.$tag)
+    public var tags: [Tag]
 
     init() { }
 

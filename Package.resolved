@@ -29,15 +29,6 @@
         }
       },
       {
-        "package": "CRuntime",
-        "repositoryURL": "https://github.com/wickwirew/CRuntime.git",
-        "state": {
-          "branch": null,
-          "revision": "95f911318d8c885f6fc05e971471f94adfd39405",
-          "version": "2.1.2"
-        }
-      },
-      {
         "package": "fluent",
         "repositoryURL": "https://github.com/vapor/fluent.git",
         "state": {
@@ -78,8 +69,8 @@
         "repositoryURL": "https://github.com/GraphQLSwift/Graphiti.git",
         "state": {
           "branch": null,
-          "revision": "93fcea39651dbca2f5d3a21e7136f1c23e2d005e",
-          "version": "0.23.0"
+          "revision": "af903a243862c6427935677b91f67df0c21f2a71",
+          "version": "0.26.0"
         }
       },
       {
@@ -87,8 +78,8 @@
         "repositoryURL": "https://github.com/GraphQLSwift/GraphQL.git",
         "state": {
           "branch": null,
-          "revision": "82081d1a877b0aee3583f95156fc85fd8a2b2c32",
-          "version": "1.2.1"
+          "revision": "e5de315125f8220334ba3799bbd78c7c1ed529f7",
+          "version": "2.0.0"
         }
       },
       {
@@ -96,8 +87,8 @@
         "repositoryURL": "https://github.com/alexsteinerde/graphql-kit.git",
         "state": {
           "branch": null,
-          "revision": "9019fca082ec74fa2e8a488fb3157fff77118c17",
-          "version": "2.1.0"
+          "revision": "bb18b63bcd303802d10996e929d679ba63127a57",
+          "version": "2.2.0"
         }
       },
       {
@@ -116,15 +107,6 @@
           "branch": null,
           "revision": "a0801a36a6ad501d5ad6285cbcd4774de6b0a734",
           "version": "4.3.0"
-        }
-      },
-      {
-        "package": "Runtime",
-        "repositoryURL": "https://github.com/wickwirew/Runtime.git",
-        "state": {
-          "branch": null,
-          "revision": "61c9776f47d2951bdc562486ad348e5e1ca2e180",
-          "version": "2.1.1"
         }
       },
       {
@@ -161,6 +143,15 @@
           "branch": null,
           "revision": "54a65d6391a1467a896d0d351ff2de6f469ee53c",
           "version": "1.2.3"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "3426dba9ee5c9f8e4981b0fc9d39a818d36eec28",
+          "version": "0.0.4"
         }
       },
       {

@@ -5,12 +5,19 @@
 This is a template that can be used to create Vapor applications that include GraphQL APIs. It's based on [GraphQL](https://github.com/GraphQLSwift/GraphQL), [Graphiti](https://github.com/GraphQLSwift/Graphiti) and helper functions from [GraphQLKit](https://github.com/alexsteinerde/graphql-kit).
 
 ## Example Queries:
+### Query
 ```graphql
 # Quering all todos with its ids and titles.
 query GetAllTodos {
   todos {
     id
     title
+    tags {
+      title
+    }
+    user {
+      name
+    }
   }
 }
 
@@ -27,6 +34,17 @@ query GetAllUsersWithTodos {
     id
     todos {
       id
+      title
+    }
+  }
+}
+
+# Quering all tags with its ids and titles.
+query GetAllTags {
+  tags {
+    id
+    title
+    todos {
       title
     }
   }
@@ -49,13 +67,28 @@ mutation createTodo($userId: UUID!) {
 }
 
 # Or we can also define parameters that are fetched from the JSON formatted parameters field below.
-mutation deleteTodo($id: UUID!) {
-  deleteTodo(id: $id)
+mutation deleteTodo($todoId: UUID!) {
+  deleteTodo(id: $todoId)
 }
 
-// Parameters
+# Create a new tag
+mutation createTag {
+  createTag(title: "Important") {
+    id
+  }
+}
+
+# Assign a tag to a todo item
+mutation addTag2Todo($todoId: UUID!, $tagId: UUID!) {
+  addTagToTodo(tagID: $tagId, todoID: $todoId)
+}
+```
+
+### Parameters
+```json
 {
-  "id": "1b06a7bc-b542-41cf-8b2a-328943a5ce80",
-  "userId": "AAFEEE1F-5185-4191-B6CC-46D4C7040565"
+  "userId": "<Generated User Id>",
+  "todoId": "<Generated Todo Id>",
+  "tagId": "<Generated Tag Id>"
 }
 ```

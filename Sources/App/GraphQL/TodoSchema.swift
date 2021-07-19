@@ -10,6 +10,8 @@ let todoSchema = try! Schema<TodoResolver, Request> {
     Type(Todo.self) {
         Field("id", at: \.id)
         Field("title", at: \.title)
+        Field("user", with: \.$user)
+        Field("tags", with: \.$tags)
     }
 
     Type(User.self) {
@@ -17,11 +19,18 @@ let todoSchema = try! Schema<TodoResolver, Request> {
         Field("name", at: \.name)
         Field("todos", with: \.$todos)
     }
+    
+    Type(Tag.self) {
+        Field("id", at: \.id)
+        Field("title", at: \.title)
+        Field("todos", with: \.$todos)
+    }
 
     // We only have one single query: Getting all existing todos
     Query {
         Field("users", at: TodoResolver.getAllUsers)
         Field("todos", at: TodoResolver.getAllTodos)
+        Field("tags", at: TodoResolver.getAllTags)
     }
 
     // Both mutations accept arguments.
@@ -43,6 +52,15 @@ let todoSchema = try! Schema<TodoResolver, Request> {
 
         Field("deleteTodo", at: TodoResolver.deleteTodo) {
           Argument("id", at: \.id)
+        }
+        
+        Field("createTag", at: TodoResolver.createTag) {
+            Argument("title", at: \.title)
+        }
+        
+        Field("addTagToTodo", at: TodoResolver.addTagToTodo) {
+            Argument("tagID", at: \.tagID)
+            Argument("todoID", at: \.todoID)
         }
     }
 }
