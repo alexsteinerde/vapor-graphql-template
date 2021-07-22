@@ -5,6 +5,7 @@ struct MigrateUsers: Migration {
         return database.schema("users")
             .id()
             .field("name", .string, .required)
+            .field("created_at", .datetime, .required)
             .create()
     }
 

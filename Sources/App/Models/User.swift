@@ -16,6 +16,9 @@ final class User: Model {
     @Children(for: \.$user)
     var todos: [Todo]
 
+    @Timestamp(key: "created_at", on: .create)
+    var createdAt: Date?
+
     init() { }
 
     /// Creates a new `Todo`.
