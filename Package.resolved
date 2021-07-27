@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/alexsteinerde/graphql-kit.git",
         "state": {
           "branch": null,
-          "revision": "bb18b63bcd303802d10996e929d679ba63127a57",
-          "version": "2.2.0"
+          "revision": "0ecbc8ea0831d704a150017ce72b1d435c6ca03b",
+          "version": "2.3.0"
         }
       },
       {

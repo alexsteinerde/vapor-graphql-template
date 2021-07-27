@@ -19,7 +19,8 @@ let todoSchema = try! Schema<TodoResolver, Request> {
         Field("id", at: \.id)
         Field("name", at: \.name)
         Field("todos", with: \.$todos)
-        Field("created_at", at: \.createdAt)
+        Field("createdAt", at: \.createdAt)
+        Field("currentTodo", with: \.$currentTodo)
     }
     
     Type(Tag.self) {

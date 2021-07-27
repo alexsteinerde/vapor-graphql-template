@@ -18,6 +18,9 @@ final class User: Model {
 
     @Timestamp(key: "created_at", on: .create)
     var createdAt: Date?
+    
+    @OptionalParent(key: "current_todo_id")
+    var currentTodo: Todo?
 
     init() { }
 

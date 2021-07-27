@@ -55,6 +55,7 @@ mutation createUser {
   createUser(name: "Jess") {
     id
     name
+    createdAt
   }
 }
 
