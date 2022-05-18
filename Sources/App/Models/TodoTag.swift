@@ -16,7 +16,7 @@ final class TodoTag: Model {
 
     init() { }
 
-    init(id: UUID? = nil, planet: Todo, tag: Tag) throws {
+    init(id: UUID? = nil, todo: Todo, tag: Tag) throws {
         self.id = id
         self.$todo.id = try todo.requireID()
         self.$tag.id = try tag.requireID()
